@@ -1,6 +1,14 @@
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+  StatusBar,
+  ScrollView,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { CustomButton } from "../components/CustomButton";
+import { Redirect, router } from "expo-router";
 
 export default function Index() {
   return (
@@ -13,19 +21,14 @@ export default function Index() {
           Where technology and data science meets the age-old practice of
           farming
         </Text>
-        <CustomButton />
+        <CustomButton
+          title="Get Started"
+          handlePress={() => router.push("/signUp")}
+        />
       </View>
     </SafeAreaView>
   );
 }
-
-// function CustomButton() {
-//   return (
-//     <TouchableOpacity style={styles.button}>
-//       <Text style={styles.text4}>Get Started</Text>
-//     </TouchableOpacity>
-//   );
-// }
 
 const styles = StyleSheet.create({
   container: {
@@ -40,19 +43,19 @@ const styles = StyleSheet.create({
   },
   text1: {
     color: "rgb(255,255,255)",
-    fontWeight: "700",
+    fontWeight: 700,
     fontSize: 25,
     textAlign: "center",
   },
   text2: {
     color: "rgb(0,255,175)",
-    fontWeight: "700",
+    fontWeight: 700,
     fontSize: 25,
     textAlign: "center",
   },
   text3: {
     color: "rgb(255,255,255)",
-    fontWeight: "700",
+    fontWeight: 700,
     fontSize: 13,
     textAlign: "center",
     padding: 20,
@@ -66,7 +69,7 @@ const styles = StyleSheet.create({
     width: 200,
   },
   text4: {
-    fontWeight: "700",
+    fontWeight: 700,
     fontSize: 13,
     textAlign: "center",
   },
